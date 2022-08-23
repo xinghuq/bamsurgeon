@@ -18,7 +18,7 @@ The following presumes $HOME/bin is in your $PATH
 SAMtools / wgsim:
 
 ```
-git clone --recurse-submodules --remote-submodules https://github.com/samtools/htslib.git
+git clone --recurse-submodules https://github.com/samtools/htslib.git
 make -C htslib
 
 git clone https://github.com/samtools/samtools.git
@@ -44,6 +44,7 @@ unzip picard-tools-1.131.zip
 
 Exonerate
 
+### make sure glib2.0 is installed or install: sudo apt-get install libglib2.0-dev
 ```
 git clone https://github.com/adamewing/exonerate.git
 cd exonerate
@@ -55,15 +56,15 @@ autoreconf -i
 Velvet
 
 ```
-wget https://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz
-tar xvzf velvet_1.2.10.tgz
-make -C velvet_1.2.10
-cp velvet_1.2.10/velvetg $HOME/bin
-cp velvet_1.2.10/velveth $HOME/bin
+git clone https://github.com/dzerbino/velvet.git
+cd velvet
+make
+cp ./velvetg $HOME/bin
+cp ./velveth $HOME/bin
 ```
 
 Pysam
-
+## python3.7
 ```
 pip install pysam
 ```
